@@ -13,7 +13,7 @@ class MessageService {
     static let instance  = MessageService()
     var channels = [Channel]()
     
-    func findAllaChannels(completion : @escaping CompletionHandler)
+    func findAllChannels(completion : @escaping CompletionHandler)
     {
         
         Alamofire.request(URL_GET_CHANNELS, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
@@ -27,9 +27,10 @@ class MessageService {
                         let id = item["_id"].stringValue
                         let channel = Channel(channelTitle: name, channelDescription: channelDescription, id: id)
                         self.channels.append(channel)
-                        print ("val channel = \(AuthService.instance.authToke)")
-                       
+                        
                     }
+                    print(self.channels[0].channelTitle)
+                    completion(true)
                      completion(true)
                     
                 }catch let error as NSError {}
