@@ -17,8 +17,12 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginVC.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
-    
+   @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     @IBAction func loginBtmPresed(_ sender: Any) {
         spinner.isHidden = false
@@ -56,6 +60,7 @@ class LoginVC: UIViewController {
         passTxt.attributedPlaceholder = NSAttributedString(string: "Password", attributes:[NSAttributedStringKey.foregroundColor: placeHolderColor])
         spinner.isHidden = true
     }
+    
     
     
     

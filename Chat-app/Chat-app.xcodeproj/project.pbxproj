@@ -506,7 +506,7 @@
 				DEVELOPMENT_TEAM = J7F682G534;
 				HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/BuildHeaders\"/**";
 				INFOPLIST_FILE = "Chat-app/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mirado.ketrika.Chat-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -527,7 +527,7 @@
 				DEVELOPMENT_TEAM = J7F682G534;
 				HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/BuildHeaders\"/**";
 				INFOPLIST_FILE = "Chat-app/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mirado.ketrika.Chat-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
