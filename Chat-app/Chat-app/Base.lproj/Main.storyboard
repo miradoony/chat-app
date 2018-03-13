@@ -665,6 +665,7 @@
                         <viewLayoutGuide key="safeArea" id="kRy-rQ-fGf"/>
                     </view>
                     <connections>
+                        <outlet property="channelNameLbl" destination="JMn-9r-TKC" id="dib-dc-rON"/>
                         <outlet property="menuBtn" destination="zUT-dV-fAt" id="txd-Cb-6kF"/>
                     </connections>
                 </viewController>

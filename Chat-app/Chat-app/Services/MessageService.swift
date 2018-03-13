@@ -12,7 +12,7 @@ import Foundation
 class MessageService {
     static let instance  = MessageService()
     var channels = [Channel]()
-    
+    var selectedChannels : Channel?
     func findAllChannels(completion : @escaping CompletionHandler)
     {
         
@@ -29,7 +29,7 @@ class MessageService {
                         self.channels.append(channel)
                         
                     }
-                    print("channeelllllllllllllllll \(self.channels[0].channelTitle)")
+                    NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
                     completion(true)
                     
                 }catch let error as NSError {}
@@ -42,5 +42,7 @@ class MessageService {
         }
         
     }
-    
+    func clearChannel(){
+        channels.removeAll()
+    }
 }

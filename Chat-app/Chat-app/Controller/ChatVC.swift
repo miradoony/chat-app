@@ -10,24 +10,43 @@ import UIKit
 
 class ChatVC: UIViewController {
     
+    @IBOutlet weak var channelNameLbl: UILabel!
     @IBOutlet weak var menuBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channeSelected(_:)),name:NOTIF_CHANNELS_SELECTED, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: NOTIF_DATA_USER_DID_CHANGE, object: nil)
         if AuthService.instance.isLoggedIn {
             AuthService.instance.findUserByEmail { (success) in
                 if success {
                     NotificationCenter.default.post(name: NOTIF_DATA_USER_DID_CHANGE, object: nil)
                 }
             }
-            MessageService.instance.findAllChannels { (success) in
-                
-            }
         }
       
     }
-    
-    
+    @objc func channeSelected (_ notif :Notification){
+        updateWithChannel()
+    }
+    func updateWithChannel(){
+        let channelName = MessageService.instance.selectedChannels?.channelTitle ?? ""
+        channelNameLbl.text = "#\(channelName)"
+    }
+    @objc func userDataDidChange (_ notif :Notification){
+        if AuthService.instance.isLoggedIn {
+           onLoginGetMessage()
+        }else{
+           channelNameLbl.text = "Please Log In"
+        }
+    }
+    func onLoginGetMessage(){
+        MessageService.instance.findAllChannels { (success) in
+            if success {
+                
+            }
+        }
+    }
 }
