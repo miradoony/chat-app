@@ -22,6 +22,7 @@
 		D33BABE2204E7C9C00AB78A3 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BABE1204E7C9C00AB78A3 /* GradientView.swift */; };
 		D349942E2057A8CB006D5FD1 /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D349942C2057A8CB006D5FD1 /* AddChannelVC.swift */; };
 		D349942F2057A8CB006D5FD1 /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D349942D2057A8CB006D5FD1 /* AddChannelVC.xib */; };
+		D34994312057BC67006D5FD1 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34994302057BC67006D5FD1 /* SocketService.swift */; };
 		D36A7678205011C2003BE8B4 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36A7677205011C2003BE8B4 /* AuthService.swift */; };
 		D36E03DC205662C2001CA18B /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E03DB205662C2001CA18B /* MessageService.swift */; };
 		D36E03DE20566323001CA18B /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E03DD20566323001CA18B /* Channel.swift */; };
@@ -56,6 +57,7 @@
 		D33BABE1204E7C9C00AB78A3 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		D349942C2057A8CB006D5FD1 /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
 		D349942D2057A8CB006D5FD1 /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
+		D34994302057BC67006D5FD1 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		D36A7677205011C2003BE8B4 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D36E03DB205662C2001CA18B /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		D36E03DD20566323001CA18B /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				D36A7677205011C2003BE8B4 /* AuthService.swift */,
 				D332A49620504DF700B47C82 /* UserDataService.swift */,
 				D36E03DB205662C2001CA18B /* MessageService.swift */,
+				D34994302057BC67006D5FD1 /* SocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -288,14 +291,12 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Chat-app/Pods-Chat-app-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
-				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D34994312057BC67006D5FD1 /* SocketService.swift in Sources */,
 				D331666120517E17003FA769 /* PofileVC.swift in Sources */,
 				D36E03E0205684AF001CA18B /* ChannelCell.swift in Sources */,
 				D3149133204D9426005EC4D0 /* ChatVC.swift in Sources */,

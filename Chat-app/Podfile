@@ -8,8 +8,8 @@ target 'Chat-app' do
   use_frameworks!
 
   # Pods for Chat-app
-  pod 'Alamofire'
-  pod 'SwiftyJSON'
-  pod 'Socket.IO-Client-Swift'
+   pod 'Socket.IO-Client-Swift', '~> 10.0.1’
+   pod 'Alamofire'
+   pod 'SwiftyJSON'
 
 end
