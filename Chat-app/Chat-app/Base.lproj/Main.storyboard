@@ -624,7 +624,7 @@
                                     <constraint firstItem="JMn-9r-TKC" firstAttribute="centerY" secondItem="zUT-dV-fAt" secondAttribute="centerY" id="xoc-gE-rTY"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zMl-hy-az3">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message :" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zMl-hy-az3">
                                 <rect key="frame" x="0.0" y="627" width="375" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="zQ1-zF-zfl"/>
@@ -702,10 +702,18 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZe-EZ-okj">
+                                <rect key="frame" x="8" y="623" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="n9t-ne-AcC" firstAttribute="top" secondItem="z2q-eY-PQ6" secondAttribute="bottom" id="0yM-tR-vM8"/>
+                            <constraint firstItem="GZe-EZ-okj" firstAttribute="leading" secondItem="kRy-rQ-fGf" secondAttribute="leading" constant="8" id="5Et-Xn-SfP"/>
+                            <constraint firstItem="zMl-hy-az3" firstAttribute="top" secondItem="GZe-EZ-okj" secondAttribute="bottom" constant="4" id="6Im-OG-dC6"/>
                             <constraint firstItem="zMl-hy-az3" firstAttribute="leading" secondItem="kRy-rQ-fGf" secondAttribute="leading" id="6Zu-r8-GpR"/>
                             <constraint firstItem="z2q-eY-PQ6" firstAttribute="top" secondItem="6Fb-aI-vrm" secondAttribute="top" id="HBp-S4-0wE"/>
                             <constraint firstItem="n9t-ne-AcC" firstAttribute="leading" secondItem="kRy-rQ-fGf" secondAttribute="leading" id="JnA-u4-oQV"/>
@@ -726,6 +734,7 @@
                         <outlet property="messageTxt" destination="zMl-hy-az3" id="RJZ-Hv-LtM"/>
                         <outlet property="sendBtn" destination="8gw-W1-Aa8" id="xgv-FS-9H7"/>
                         <outlet property="tableView" destination="n9t-ne-AcC" id="qqw-ii-aTf"/>
+                        <outlet property="typinUserLbl" destination="GZe-EZ-okj" id="LMB-Bu-uFL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYo-10-P04" userLabel="First Responder" sceneMemberID="firstResponder"/>
