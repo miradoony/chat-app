@@ -30,7 +30,7 @@ class MessageCell: UITableViewCell {
         userName.text = message.userName
         userImg.image = UIImage(named : message.userAvatar)
         timeStamp.text = message.timeStamp
-        userImg.backgroundColor = UserDataService.instance.returnUIColor(component: message.userAvatar)
+        userImg.backgroundColor = UserDataService.instance.returnUIColor(component: message.userAvatarColor)
     }
 
 }

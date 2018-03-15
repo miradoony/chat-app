@@ -78,7 +78,7 @@
                                 <rect key="frame" x="0.0" y="135.5" width="375" height="392.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="channelCell" id="esM-Eb-UGa" customClass="ChannelCell" customModule="Chat_app" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="channelCell" id="esM-Eb-UGa" customClass="ChannelCell" customModule="Chat_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="esM-Eb-UGa" id="N3q-eO-QHV">
@@ -633,12 +633,15 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="sendMessagePressed:" destination="IJN-Fr-Xs6" eventType="editingDidEnd" id="FWJ-ad-BiQ"/>
+                                    <action selector="messageBoxEditing:" destination="IJN-Fr-Xs6" eventType="editingChanged" id="Cwe-5s-2OR"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gw-W1-Aa8">
                                 <rect key="frame" x="337" y="632" width="30" height="30"/>
                                 <state key="normal" image="send"/>
+                                <connections>
+                                    <action selector="sendMessagePressed:" destination="IJN-Fr-Xs6" eventType="touchUpInside" id="bjl-qn-4At"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n9t-ne-AcC">
                                 <rect key="frame" x="0.0" y="77" width="375" height="520"/>
@@ -721,6 +724,7 @@
                         <outlet property="channelNameLbl" destination="JMn-9r-TKC" id="dib-dc-rON"/>
                         <outlet property="menuBtn" destination="zUT-dV-fAt" id="txd-Cb-6kF"/>
                         <outlet property="messageTxt" destination="zMl-hy-az3" id="RJZ-Hv-LtM"/>
+                        <outlet property="sendBtn" destination="8gw-W1-Aa8" id="xgv-FS-9H7"/>
                         <outlet property="tableView" destination="n9t-ne-AcC" id="qqw-ii-aTf"/>
                     </connections>
                 </viewController>

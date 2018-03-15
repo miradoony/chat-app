@@ -15,8 +15,12 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var messageTxt: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
+    
+    var isTyping = false
+    @IBOutlet weak var sendBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        sendBtn.isHidden = true
         view.bindToKeyboard()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ChatVC.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -31,7 +35,13 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: NOTIF_DATA_USER_DID_CHANGE, object: nil)
         
         SocketService.instance.getMessage { (success) in
-            if success{  self.tableView.reloadData()}
+            if success{
+                self.tableView.reloadData()
+                if MessageService.instance.messages.count > 0 {
+                    let index = IndexPath(row: MessageService.instance.messages.count-1, section: 0)
+                    self.tableView.scrollToRow(at: index, at: .bottom, animated: false)
+                }
+            }
         }
         if AuthService.instance.isLoggedIn {
             AuthService.instance.findUserByEmail { (success) in
@@ -59,6 +69,10 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         dismissKeyboard()
     }
+    
+    
+    
+    
     @objc func channeSelected (_ notif :Notification){
         updateWithChannel()
     }
@@ -72,6 +86,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
            onLoginGetMessage()
         }else{
            channelNameLbl.text = "Please Log In"
+            tableView.reloadData()
         }
     }
     func onLoginGetMessage(){
@@ -117,6 +132,19 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     
+    @IBAction func messageBoxEditing(_ sender: Any) {
+        if messageTxt.text == "" {
+            isTyping = false
+            sendBtn.isHidden = true
+        }
+        else {
+            if isTyping{
+                sendBtn.isHidden = false
+            }
+            isTyping = true
+        }
+        
+    }
     
     
     
